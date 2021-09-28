@@ -1,4 +1,4 @@
-import { PGateway_Action } from './pgateway.dto';
+import { ProcessAction } from './pgateway.dto';
 import { PGatewayClient } from './clients/pgateway-client.interface';
 import pGatewayService from './pgateway.service';
 import { pGatewayClient_1, pGatewayClient_2 } from './clients';
@@ -19,7 +19,7 @@ const clientFromType = (type: string): PGatewayClient => {
   }
 };
 
-const action: PGateway_Action = ({ body: { action, type } }) =>
+const processAction: ProcessAction = ({ body: { action, type } }) =>
   pGatewayService(clientFromType(type))(action);
 
-export = { action };
+export { processAction };

@@ -1,4 +1,4 @@
-export class PGateway_ActionInput {
+export class ProcessActionParams {
   body: {
     type: string;
     action: string;
@@ -6,6 +6,6 @@ export class PGateway_ActionInput {
   };
 }
 
-export interface PGateway_Action {
-  (params: PGateway_ActionInput): string;
+export interface ProcessAction {
+  (params: ProcessActionParams): string;
 }
