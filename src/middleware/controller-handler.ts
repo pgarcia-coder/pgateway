@@ -48,10 +48,6 @@ export = <T, R>({
 
       const response = await controller(input);
 
-      if (!response) {
-        throw new createHttpError.NotFound();
-      }
-
       res.status(successCode).send(response);
       return next();
     } catch (error) {
